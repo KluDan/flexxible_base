@@ -10,6 +10,15 @@ g.type("Post", {
   id: scalar.id(),
 });
 
+const User = g.interface("User", {
+  name: scalar.string(),
+  email: g.string(),
+  avatarUrl: g.url(),
+  description: g.string().optional(),
+  githubUrl: g.url().optional(),
+  linkedInUrl: g.url().optional(),
+});
+
 export default config({
   graph: g,
   // Authentication - https://grafbase.com/docs/auth
